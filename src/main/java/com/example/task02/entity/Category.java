@@ -9,9 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * @author Sanjarbek Allayev, сб 18:18. 12.03.2022
- */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

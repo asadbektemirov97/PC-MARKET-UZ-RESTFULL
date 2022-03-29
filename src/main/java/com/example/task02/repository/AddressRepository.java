@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface AddressRepository extends JpaRepository<Address, Integer> {
 
-    boolean existsAddressByCityAndHomeAndStreet(String city,String home,String street);
-Optional<Address> findByCityAndHomeAndStreet(String city,String home,String street);
+    boolean existsAddressByCityAndHomeAndStreet(String city, String home, String street);
+
+    Optional<Address> findByCityAndHomeAndStreet(String city, String home, String street);
 }

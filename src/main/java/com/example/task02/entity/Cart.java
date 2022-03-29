@@ -7,9 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * @author Sanjarbek Allayev, сб 19:32. 12.03.2022
- */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

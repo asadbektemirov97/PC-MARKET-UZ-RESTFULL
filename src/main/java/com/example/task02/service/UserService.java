@@ -14,9 +14,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author Sanjarbek Allayev, пн 15:20. 14.03.2022
- */
 @Service
 @RequiredArgsConstructor
 public class UserService {

@@ -10,9 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-/**
- * @author Sanjarbek Allayev, пн 14:46. 14.03.2022
- */
 @Component
 @RequiredArgsConstructor
 public class DataLoader implements CommandLineRunner {

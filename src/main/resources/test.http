@@ -2,11 +2,11 @@ http://localhost/api/users
 Content-Type: application/json
 
 {
-  "fullName" : "Sanjar Allayev",
-  "phoneNumber" : "+998900046722",
-  "password" : "Sanjar2979",
-  "home" : "74",
+  "fullName" : "Temirov Asadbek",
+  "phoneNumber" : "+998972968668",
+  "password" : "Asadbek8668",
+  "home" : "24",
   "city" : "Tashkent",
-  "street" : "Navbahor"
+  "street" : "Sergeli"
 
 }
