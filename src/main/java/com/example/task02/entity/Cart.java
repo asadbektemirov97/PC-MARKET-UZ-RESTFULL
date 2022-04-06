@@ -11,12 +11,14 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
+
 public class Cart {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
 
-    @OneToMany(mappedBy = "cart",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cart", fetch = FetchType.LAZY)
     private List<CartProduct> cartProducts;
 }

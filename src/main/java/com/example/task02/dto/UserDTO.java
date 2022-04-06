@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class UserDTO {
-private String fullName;
-private String phoneNumber;
-private String password;
-private String home;
-private String city;
-private String street;
+    private String fullName;
+    private String phoneNumber;
+    private String password;
+    private String home;
+    private String city;
+    private String street;
 }

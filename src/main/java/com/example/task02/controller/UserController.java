@@ -17,29 +17,32 @@ public class UserController {
     final UserService userService;
 
     @GetMapping
-    public HttpEntity<?> getAll(){
-        ApiResponse apiResponse=userService.getAll();
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.FOUND:HttpStatus.NOT_FOUND).body(apiResponse);
+    public HttpEntity<?> getAll() {
+        ApiResponse apiResponse = userService.getAll();
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.FOUND : HttpStatus.NOT_FOUND).body(apiResponse);
     }
+
     @GetMapping("/{id}")
-    public HttpEntity<?> getOne(@PathVariable Integer id){
-        ApiResponse apiResponse=userService.getOne(id);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.FOUND:HttpStatus.NOT_FOUND).body(apiResponse);
+    public HttpEntity<?> getOne(@PathVariable Integer id) {
+        ApiResponse apiResponse = userService.getOne(id);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.FOUND : HttpStatus.NOT_FOUND).body(apiResponse);
     }
+
     @PostMapping
-    public HttpEntity<?> save(@RequestBody UserDTO dto){
-        ApiResponse apiResponse=userService.save(dto);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.CREATED:HttpStatus.CONFLICT).body(apiResponse);
+    public HttpEntity<?> save(@RequestBody UserDTO dto) {
+        ApiResponse apiResponse = userService.save(dto);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.CREATED : HttpStatus.CONFLICT).body(apiResponse);
     }
+
     @PutMapping("/{id}")
-    public HttpEntity<?> edit(@PathVariable Integer id,@RequestBody UserDTO dto){
-        ApiResponse apiResponse=userService.edit(id,dto);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.ACCEPTED:HttpStatus.CONFLICT).body(apiResponse);
+    public HttpEntity<?> edit(@PathVariable Integer id, @RequestBody UserDTO dto) {
+        ApiResponse apiResponse = userService.edit(id, dto);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.ACCEPTED : HttpStatus.CONFLICT).body(apiResponse);
     }
-    
+
     @DeleteMapping("/{id}")
-    public HttpEntity<?> delete(@PathVariable Integer id){
-        ApiResponse apiResponse=userService.delete(id);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.ACCEPTED:HttpStatus.CONFLICT).body(apiResponse);
+    public HttpEntity<?> delete(@PathVariable Integer id) {
+        ApiResponse apiResponse = userService.delete(id);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.ACCEPTED : HttpStatus.CONFLICT).body(apiResponse);
     }
 }

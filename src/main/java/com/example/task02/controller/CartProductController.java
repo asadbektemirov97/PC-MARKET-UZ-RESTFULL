@@ -18,26 +18,26 @@ public class CartProductController {
 
 
     @GetMapping
-    public HttpEntity<?> getAll(@RequestParam Integer cartId){
-        ApiResponse apiResponse= cartProductService.getAll(cartId);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.FOUND:HttpStatus.NOT_FOUND).body(apiResponse);
+    public HttpEntity<?> getAll(@RequestParam Integer cartId) {
+        ApiResponse apiResponse = cartProductService.getAll(cartId);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.FOUND : HttpStatus.NOT_FOUND).body(apiResponse);
     }
 
     @GetMapping("/{id}")
-    public HttpEntity<?> getOne(@PathVariable Integer id,@RequestParam Integer cartId){
-        ApiResponse apiResponse= cartProductService.getOne(id,cartId);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.FOUND:HttpStatus.NOT_FOUND).body(apiResponse);
+    public HttpEntity<?> getOne(@PathVariable Integer id, @RequestParam Integer cartId) {
+        ApiResponse apiResponse = cartProductService.getOne(id, cartId);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.FOUND : HttpStatus.NOT_FOUND).body(apiResponse);
     }
 
     @PostMapping
-    public HttpEntity<?> save(@RequestBody CartDTO dto){
-        ApiResponse apiResponse= cartProductService.save(dto);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.CREATED:HttpStatus.CONFLICT).body(apiResponse);
+    public HttpEntity<?> save(@RequestBody CartDTO dto) {
+        ApiResponse apiResponse = cartProductService.save(dto);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.CREATED : HttpStatus.CONFLICT).body(apiResponse);
     }
 
     @DeleteMapping("/{id}")
-    public HttpEntity<?> delete(@PathVariable Integer id,@RequestParam Integer cartId){
-        ApiResponse apiResponse= cartProductService.delete(id,cartId);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.ACCEPTED:HttpStatus.CONFLICT).body(apiResponse);
+    public HttpEntity<?> delete(@PathVariable Integer id, @RequestParam Integer cartId) {
+        ApiResponse apiResponse = cartProductService.delete(id, cartId);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.ACCEPTED : HttpStatus.CONFLICT).body(apiResponse);
     }
 }

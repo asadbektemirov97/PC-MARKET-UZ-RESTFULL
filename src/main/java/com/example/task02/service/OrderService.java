@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+
 public class OrderService {
 
     final OrderProductRepository orderProductRepository;
@@ -25,34 +26,34 @@ public class OrderService {
 
     public ApiResponse getAll() {
         List<Order> all = orderRepository.findAll();
-return new ApiResponse("List of orders",true,all);
+        return new ApiResponse("List of orders", true, all);
     }
 
     public ApiResponse getOne(Integer id) {
         Optional<Order> byId = orderRepository.findById(id);
-        if (byId.isEmpty()) return new ApiResponse("Xatolik",false);
+        if (byId.isEmpty()) return new ApiResponse("Xatolik", false);
         Order order = byId.get();
-        return new ApiResponse("Mana",true,order);
+        return new ApiResponse("Mana", true, order);
     }
 
     public ApiResponse delete(Integer id) {
         orderRepository.deleteById(id);
-        return new ApiResponse("Deleted",true);
+        return new ApiResponse("Deleted", true);
     }
 
     public ApiResponse save(OrderDTO dto) {
-        Order order= new Order();
-        Address address=new Address();
+        Order order = new Order();
+        Address address = new Address();
         Optional<Address> byCityAndHomeAAndStreet = addressRepository.findByCityAndHomeAndStreet(dto.getCity(), dto.getHome(), dto.getStreet());
-        if (byCityAndHomeAAndStreet.isEmpty()){
-        address.setCity(dto.getCity());
-        address.setHome(dto.getHome());
-        address.setStreet(dto.getStreet());
+        if (byCityAndHomeAAndStreet.isEmpty()) {
+            address.setCity(dto.getCity());
+            address.setHome(dto.getHome());
+            address.setStreet(dto.getStreet());
             Address save = addressRepository.save(address);
-        order.setAddress(save);
+            order.setAddress(save);
         }
         order.setAddress(byCityAndHomeAAndStreet.get());
-        Payment payment= new Payment();
+        Payment payment = new Payment();
         payment.setPaymentType(PaymentType.valueOf(dto.getPaymentType()));
         Payment save = paymentRepository.save(payment);
         order.setPayment(save);
@@ -62,11 +63,11 @@ return new ApiResponse("List of orders",true,all);
         Order savedOrder = orderRepository.save(order);
 
         int length = dto.getProductAmounts().length;
-        List<OrderProduct> orderProducts= new ArrayList<>();
+        List<OrderProduct> orderProducts = new ArrayList<>();
         Integer[] productAmounts = dto.getProductAmounts();
         Integer[] productIds = dto.getProductIds();
-        for (int i=0;i<length;i++){
-            OrderProduct orderProduct=new OrderProduct();
+        for (int i = 0; i < length; i++) {
+            OrderProduct orderProduct = new OrderProduct();
             orderProduct.setOrder(savedOrder);
             orderProduct.setProduct(productRepository.getById(productIds[i]));
             orderProduct.setAmount(productAmounts[i]);
@@ -74,6 +75,6 @@ return new ApiResponse("List of orders",true,all);
             orderProducts.add(save1);
         }
         List<OrderProduct> orderProducts1 = orderProductRepository.saveAll(orderProducts);
-        return new ApiResponse("Saqlandi",true,savedOrder);
+        return new ApiResponse("Saqlandi", true, savedOrder);
     }
 }

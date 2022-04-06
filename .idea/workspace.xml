@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c27d8e40-2186-47dd-9502-d2ba4252ebee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="c27d8e40-2186-47dd-9502-d2ba4252ebee" name="Changes" comment="O'zgarish">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/component/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/component/DataLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/config/SecurityConfig.java" afterDir="false" />
@@ -29,15 +27,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/entity/enums/PaymentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/entity/enums/PaymentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/repository/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/repository/AddressRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/repository/CartProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/repository/CartProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/service/CartProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/service/CartProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/service/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task02/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task02/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/test.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +80,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -111,8 +110,17 @@
       <option name="presentableId" value="Default" />
       <updated>1648538779435</updated>
       <workItem from="1648538781144" duration="135000" />
-      <workItem from="1648538938056" duration="537000" />
+      <workItem from="1648538938056" duration="1243000" />
+      <workItem from="1649242862811" duration="1025000" />
     </task>
+    <task id="LOCAL-00001" summary="O'zgarish">
+      <created>1648539557214</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648539557214</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,5 +128,9 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="application.properties" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="O'zgarish" />
+    <option name="LAST_COMMIT_MESSAGE" value="O'zgarish" />
   </component>
 </project>

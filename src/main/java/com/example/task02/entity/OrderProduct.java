@@ -10,7 +10,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
+
 public class OrderProduct {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

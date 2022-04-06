@@ -31,10 +31,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/api/**").permitAll()
-                .antMatchers(HttpMethod.POST,"/api/**").hasAnyRole("SUPER_ADMIN","MODERATOR")
-                .antMatchers(HttpMethod.PUT,"/api/**").hasAnyRole("SUPER_ADMIN","MODERATOR")
-                .antMatchers(HttpMethod.DELETE,"/api/**").hasRole("SUPER_ADMIN")
+                .antMatchers(HttpMethod.GET, "/api/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/**").hasAnyRole("SUPER_ADMIN", "MODERATOR")
+                .antMatchers(HttpMethod.PUT, "/api/**").hasAnyRole("SUPER_ADMIN", "MODERATOR")
+                .antMatchers(HttpMethod.DELETE, "/api/**").hasRole("SUPER_ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -42,9 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
     @Bean
-    PasswordEncoder passwordEncoder(){
+    PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }

@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class ApiResponse {
-private String message;
-private boolean success;
-private Object object;
+    private String message;
+    private boolean success;
+    private Object object;
 
     public ApiResponse(String message, boolean success) {
         this.message = message;

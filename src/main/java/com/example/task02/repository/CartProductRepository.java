@@ -7,5 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CartProductRepository extends JpaRepository<CartProduct, Integer> {
+
     List<CartProduct> findAllByCart_Id(Integer id);
 }

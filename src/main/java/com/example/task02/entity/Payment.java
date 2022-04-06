@@ -13,7 +13,9 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @Data
 @Entity
+
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

@@ -10,14 +10,17 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity(name = "users")
+
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(nullable = false)
     private String fullName;
 
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false, unique = true)
     private String phoneNumber;
 
     @Column(nullable = false)
@@ -25,6 +28,7 @@ public class User {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Cart cart;
 }

@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class OrderDTO {
-private Integer userId;
-private String city;
-private String street;
-private String home;
-private String paymentType;
-private Integer[] productIds;
-private Integer[] productAmounts;
+    private Integer userId;
+    private String city;
+    private String street;
+    private String home;
+    private String paymentType;
+    private Integer[] productIds;
+    private Integer[] productAmounts;
 }

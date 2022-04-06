@@ -21,25 +21,26 @@ public class OrderController {
     final OrderService orderService;
 
     @GetMapping
-    public HttpEntity<?> getAll(){
-        ApiResponse apiResponse=orderService.getAll();
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.FOUND:HttpStatus.NOT_FOUND).body(apiResponse);
+    public HttpEntity<?> getAll() {
+        ApiResponse apiResponse = orderService.getAll();
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.FOUND : HttpStatus.NOT_FOUND).body(apiResponse);
     }
+
     @GetMapping("/{id}")
-    public HttpEntity<?> getOne(@PathVariable Integer id){
-        ApiResponse apiResponse=orderService.getOne(id);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.FOUND:HttpStatus.NOT_FOUND).body(apiResponse);
+    public HttpEntity<?> getOne(@PathVariable Integer id) {
+        ApiResponse apiResponse = orderService.getOne(id);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.FOUND : HttpStatus.NOT_FOUND).body(apiResponse);
     }
 
     @PostMapping
-    public HttpEntity<?> save(@RequestBody OrderDTO dto){
-        ApiResponse apiResponse=orderService.save(dto);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.CREATED:HttpStatus.CONFLICT).body(apiResponse);
+    public HttpEntity<?> save(@RequestBody OrderDTO dto) {
+        ApiResponse apiResponse = orderService.save(dto);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.CREATED : HttpStatus.CONFLICT).body(apiResponse);
     }
 
     @DeleteMapping("/{id}")
-    public HttpEntity<?> delete(@PathVariable Integer id){
-        ApiResponse apiResponse=orderService.delete(id);
-        return ResponseEntity.status(apiResponse.isSuccess()? HttpStatus.ACCEPTED:HttpStatus.CONFLICT).body(apiResponse);
+    public HttpEntity<?> delete(@PathVariable Integer id) {
+        ApiResponse apiResponse = orderService.delete(id);
+        return ResponseEntity.status(apiResponse.isSuccess() ? HttpStatus.ACCEPTED : HttpStatus.CONFLICT).body(apiResponse);
     }
 }

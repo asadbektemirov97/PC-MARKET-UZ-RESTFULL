@@ -16,7 +16,9 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+
 public class CartProductService {
+
     final CartRepository cartRepository;
     final CartProductRepository cartProductRepository;
     final ProductRepository productRepository;
@@ -24,29 +26,29 @@ public class CartProductService {
 
     public ApiResponse getAll(Integer cartId) {
         List<CartProduct> allByCart_id = cartProductRepository.findAllByCart_Id(cartId);
-        return new ApiResponse("List",true,allByCart_id);
+        return new ApiResponse("List", true, allByCart_id);
     }
 
     public ApiResponse getOne(Integer id, Integer cartId) {
         List<CartProduct> allByCart_id = cartProductRepository.findAllByCart_Id(cartId);
         for (CartProduct cartProduct : allByCart_id) {
-            if (cartProduct.getId().equals(id)){
-                return new ApiResponse("mana",true,cartProduct);
+            if (cartProduct.getId().equals(id)) {
+                return new ApiResponse("mana", true, cartProduct);
             }
         }
-        return new ApiResponse("Xatolik",false);
+        return new ApiResponse("Xatolik", false);
     }
 
     public ApiResponse save(CartDTO dto) {
         Optional<Cart> byId = cartRepository.findById(dto.getCartId());
-        if (byId.isEmpty()) return new ApiResponse("Xatolik",false);
+        if (byId.isEmpty()) return new ApiResponse("Xatolik", false);
         Cart cart = byId.get();
         List<CartProduct> cartProducts = cart.getCartProducts();
-        CartProduct cartProduct= new CartProduct();
+        CartProduct cartProduct = new CartProduct();
         Product byId1 = productRepository.getById(dto.getProductId());
         for (CartProduct product : cartProducts) {
-            if (product.equals(byId1)){
-                product.setAmount(product.getAmount()+dto.getAmount());
+            if (product.equals(byId1)) {
+                product.setAmount(product.getAmount() + dto.getAmount());
             }
         }
         cartProduct.setProduct(byId1);
@@ -54,7 +56,7 @@ public class CartProductService {
         cartProducts.add(cartProduct);
         cart.setCartProducts(cartProducts);
         Cart save = cartRepository.save(cart);
-        return new ApiResponse("Saqlandi",true,save);
+        return new ApiResponse("Saqlandi", true, save);
     }
 
     public ApiResponse delete(Integer id, Integer cartId) {
@@ -64,6 +66,6 @@ public class CartProductService {
         cart.setCartProducts(cartProducts);
         cartProductRepository.deleteById(id);
         Cart save = cartRepository.save(cart);
-        return new ApiResponse("Deleted",true,save);
+        return new ApiResponse("Deleted", true, save);
     }
 }
